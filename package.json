@@ -1,0 +1,7 @@
+{
+  "name": "event-graph-public",
+  "version": "1.0.0",
+  "dependencies": {
+    "vue": "^3.2.31"
+  }
+}

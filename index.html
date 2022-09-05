@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>藻知道：便携式海洋藻类智能监测系统</title>
+    <link rel="stylesheet" href="css/comon0.css">
+</head>
+
+<body>
+
+<div class="canvas" style="opacity: .2">
+	<iframe frameborder="0" src="js/index.html" style="width: 100%; height: 100%"></iframe>
+</div>
+
+<div class="loading">
+  <div class="loadbox"> <img src="picture/loading.gif"> 页面加载中... </div>
+</div>
+
+<div class="head">
+
+  <div class="header_center">
+    <h1>藻知道：便携式海洋藻类智能监测系统</h1>
+  </div>
+
+    <div class="weather"><span id="showTime"></span></div>
+
+    <script>
+    var t = null;
+    t = setTimeout(time,1000);//開始运行
+    function time()
+    {
+       clearTimeout(t);//清除定时器
+       dt = new Date();
+		var y=dt.getFullYear();
+		var mt=dt.getMonth()+1;
+		var day=dt.getDate();
+       var h=dt.getHours();//获取时
+       var m=dt.getMinutes();//获取分
+       var s=dt.getSeconds();//获取秒
+       document.getElementById("showTime").innerHTML = y+"年"+mt+"月"+day+"日"+h+"时"+m+"分"+s+"秒";
+       t = setTimeout(time,1000); //设定定时器，循环运行     
+    } 
+    </script>
+
+</div>
+
+<div class="mainbox">
+
+  <ul class="clearfix">
+
+    <li>
+      <div class="bar">
+        <div class="barbox2">
+          <ul class="clearfix">
+            <li class="pulll_left"> </li>
+            <li class="pulll_left">采集时间</li>
+            <li class="pulll_left">位置</li>
+          </ul>
+        </div>
+        <div class="barbox">
+          <ul class="clearfix">
+            <li class="pulll_left counter" id="uv_name" style="font-family:微软雅黑; font-size: .3rem; color: rgba(255,255,255,0.8)">仙岳公园</li>
+            <li class="pulll_left counter" id="time">14：30</li>
+              <li class="pulll_left counter" id="position">0°N, 0°E</li>
+          </ul>
+        </div>
+      </div>
+      <div class="map" id="map_1">
+
+      </div>
+    </li>
+
+<!--右边部分-->
+    <li>
+      <div class="boxall" style="height:3.3rem">
+        <div class="alltitle" id="event_name">浮藻浓度</div>
+        <div class="allnav" id="seaweed"></div>
+        <div class="boxfoot"></div>
+      </div>
+      <div class="boxall" style="height: 3.3rem">
+        <div class="alltitle" id="img_name">照片</div>
+        <div class="allnav" id="img" style="background-image: url(images/photos/position1.jpg)"></div>
+        <div class="boxfoot"></div>
+      </div>
+      <div class="boxall" style="height: 3.2rem">
+        <div class="alltitle" id="select_name_out">详细信息</div>
+        <div class="allnav" id="event_info">
+            <div>
+                <ul style="display: inline-block; white-space: nowrap">
+                    <li class="event_info1" id="img_num">照片量：</li>
+                </ul>
+                <ul style="display: inline-block; white-space: nowrap">
+                    <li class="event_info1" id="status">赤潮预警状态：</li>
+                </ul>
+            </div>
+        </div>
+        <div class="boxfoot"></div>
+      </div>
+    </li>
+
+  </ul>
+
+</div>
+
+<div class="back"></div>
+
+</body>
+
+<script type="text/javascript" src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="https://api.map.baidu.com/api?v=2.0&ak=uAEIuqTqw9WoIIjwKIGCeaprkb0ZQvyK&s=1"></script>
+<script src="js/bmap.js"></script>
+<script src="js/ReadJSON.js"></script>
+
+<script>
+	$(window).load(function(){  
+             $(".loading").fadeOut()
+            })  
+			
+  /****/
+  $(document).ready(function(){
+    var whei=$(window).width()
+    $("html").css({fontSize:whei/20})
+    $(window).resize(function(){
+      var whei=$(window).width()
+    $("html").css({fontSize:whei/20})
+  });
+    });
+</script>
+
+<script type="text/javascript" src="js/map.js"></script>
+
+
+</html>
