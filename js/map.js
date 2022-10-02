@@ -154,8 +154,8 @@ function map(map_data){
 
         // 显示选中点图片变化
         document.getElementById('img_name').innerText = params.data.name + "图片";
-        document.getElementById('img').src= "images/photos/" + params.name + ".jpg";
-
+        document.getElementById('img').src = "images/photos/" + params.name + ".jpg";
+        img_url = "images/photos/" + params.name + ".jpg";
         //修改选中点详细信息
         document.getElementById('img_num').innerText = "照片量：" + params.data.value[4].toString();
         document.getElementById('status').innerText = "赤潮预警状态：" + params.data.value[5].toString();
