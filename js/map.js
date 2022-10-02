@@ -147,7 +147,7 @@ function map(map_data){
         // 修改barbox内容
         document.getElementById('uv_name').innerText = params.data.name;
         document.getElementById('time').innerText = params.data.value[3].toString();
-        document.getElementById('position').innerText = params.data.value[0].toString() + "°N," + params.data.value[1].toString() + "°E";
+        document.getElementById('position').innerText = params.data.value[0].toFixed(2) + "°N," + params.data.value[1].toFixed(2) + "°E";
 
         // 修改选中点浮藻浓度
         pie(pie_data[params.dataIndex])

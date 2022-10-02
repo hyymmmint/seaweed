@@ -79,7 +79,15 @@
       </div>
       <div class="boxall" style="height: 3.3rem">
         <div class="alltitle" id="img_name">照片</div>
-        <div class="allnav" id="img" style="background-image: url(images/photos/position1.jpg)"></div>
+        <div class="allnav" id="img" style="margin: 0 auto">
+          <el-image
+                  style="width: 1.5rem; height: 2.5rem; left: 2rem; top: .1rem;"
+                  :src="url"
+                  :preview-src-list="srcList"
+                  :fit="fit">
+          </el-image>
+        </div>
+<!--        <div class="allnav" id="img" style="background-image: url(images/photos/position1.jpg)"></div>-->
         <div class="boxfoot"></div>
       </div>
       <div class="boxall" style="height: 3.2rem">
@@ -105,6 +113,11 @@
 <div class="back"></div>
 
 </body>
+
+<!--引入Vue-->
+<script src="js/vue.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
 <script type="text/javascript" src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
